@@ -57,3 +57,13 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+**Material UI**
+After Installing Material UI using ng add @angular/material
+got the below changes
+In **angular.json** file **material** got added to **styles**
+In** package-lock.json** and **package.json** necessary package got added
+In **index.html** styles link got embedded and mat-typography got included
+In **styles.css** some global default styles got added
+In **app.config.ts** in providers array **provideAnimationsAsync()** got included
+
