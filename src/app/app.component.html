@@ -1,46 +1,72 @@
-<router-outlet />
+<!-- Router Outlet for Routing -->
+<router-outlet></router-outlet>
+
+<!-- Material Card Example -->
 <mat-card appearance="outlined">
-  <mat-card-title style="color: aliceblue;"><span>{{title | uppercase}}</span></mat-card-title>
-  <mat-card-content style="color: aliceblue;" >Simple card</mat-card-content>
+  <!-- Displays title in uppercase using the Uppercase Pipe -->
+  <mat-card-title style="color: aliceblue;">
+    <span>{{ title | uppercase }}</span>
+  </mat-card-title>
+
+  <!-- Simple Content -->
+  <mat-card-content style="color: aliceblue;">Simple card</mat-card-content>
 </mat-card>
+
+<!-- Header Component -->
 <app-header></app-header>
+
+<!-- Navigation Component -->
 <app-navigation></app-navigation>
+
+<!-- Home Component -->
 <app-home></app-home>
-<span>{{today}}</span>
-<br>
-<span>{{today | date}}</span>
-<br>
-<span>{{today | date:'dd/mm/yyyy'}}</span>
-<br>
-<span>{{salary | currency}}</span>
-<br>
-<span>{{salary | currency:'INR'}}</span>
-<br>
-<span>{{salary | currency:'EUR'}}</span>
-<br>
-<span>{{salary | number:'1.2-2'}}</span>
-<br>
-<span>{{salary | number:'1.3-3'}}</span>
-<br>
-<span>{{salary/100 | percent}}</span>
-<!-- /100 is optional -->
-<br>
-<span>{{objects}}</span>
-<br>
-<span>{{objects | json}}</span>
-<br>
-<span>{{title | reverse}}</span>
-<br>
-<input type="checkbox" [disabled]="isdisabled">
-<!-- instead of disabled u can use checked as well -->
-<input type="checkbox" checked = {{isdisabled}}>
-<!-- as we used interpolation it doesn't work properly like everytime it takes as true and stay checked -->
-<input [value]="isdisabled">
-<br>
-<input (keyup)="UpdateTitle($event)"/>
 
-<button (click)="ChangeTitle()">Click Here</button>
+<!-- Date Pipe Examples: Formats a Date Object -->
+<span>{{ today }}</span> <!-- Default date value -->
+<br>
+<span>{{ today | date }}</span> <!-- Default Angular date format -->
+<br>
+<span>{{ today | date: 'dd/MM/yyyy' }}</span> <!-- Custom date format -->
 
-<input [(ngModel)]="title"/>
+<!-- Currency Pipe Examples: Formats numbers as currency -->
+<span>{{ salary | currency }}</span> <!-- Default currency (e.g., USD) -->
+<br>
+<span>{{ salary | currency: 'INR' }}</span> <!-- Formats as Indian Rupees -->
+<br>
+<span>{{ salary | currency: 'EUR' }}</span> <!-- Formats as Euros -->
+
+<!-- Decimal (Number) Pipe Examples: Formats numbers with decimal places -->
+<span>{{ salary | number: '1.2-2' }}</span> <!-- 2 decimal places (min 2, max 2) -->
+<br>
+<span>{{ salary | number: '1.3-3' }}</span> <!-- 3 decimal places (min 3, max 3) -->
+
+<!-- Percent Pipe Example: Converts number to percentage -->
+<span>{{ salary / 100 | percent }}</span> <!-- Displays salary as percentage -->
+
+<!-- JSON Pipe Example: Converts object to JSON string -->
+<span>{{ objects }}</span> <!-- Raw object -->
+<br>
+<span>{{ objects | json }}</span> <!-- JSON-formatted object -->
+
+<!-- Custom Pipe Example -->
+<span>{{ title | reverse }}</span> <!-- Custom pipe (e.g., reverse string) -->
+
+<!-- Property Binding Examples -->
+<input type="checkbox" [disabled]="isdisabled"> <!-- Disables checkbox dynamically -->
+<input type="checkbox" checked="{{ isdisabled }}"> <!-- Interpolation (not ideal for boolean) -->
+<input [value]="isdisabled"> <!-- Property binding to display value -->
+
+<!-- Event Binding Example -->
+<input (keyup)="UpdateTitle($event)" /> <!-- Updates title on keyup -->
+
+<!-- Two-way Data Binding -->
+<input [(ngModel)]="title" /> <!-- Synchronizes input with title -->
+
+<!-- Button with Event Binding -->
+<button (click)="ChangeTitle()">Click Here</button> <!-- Calls ChangeTitle on click -->
+
+<!-- Inline Style Component -->
 <app-inlinestyle></app-inlinestyle>
+
+<!-- Footer Component -->
 <app-footer></app-footer>

@@ -38,3 +38,4 @@ export class AppComponent {
 //ReversePipe for custompipes
 //Interpolation - consider it as string
 //Property = considers exact datatype
+//FormsModule for ngModel Directive
