@@ -1,6 +1,6 @@
 <router-outlet />
 <mat-card appearance="outlined">
-  <mat-card-title style="color: aliceblue;">{{title | uppercase}}</mat-card-title>
+  <mat-card-title style="color: aliceblue;"><span>{{title | uppercase}}</span></mat-card-title>
   <mat-card-content style="color: aliceblue;" >Simple card</mat-card-content>
 </mat-card>
 <app-header></app-header>
@@ -36,4 +36,11 @@
 <input type="checkbox" checked = {{isdisabled}}>
 <!-- as we used interpolation it doesn't work properly like everytime it takes as true and stay checked -->
 <input [value]="isdisabled">
+<br>
+<input (keyup)="UpdateTitle($event)"/>
+
+<button (click)="ChangeTitle()">Click Here</button>
+
+<input [(ngModel)]="title"/>
+<app-inlinestyle></app-inlinestyle>
 <app-footer></app-footer>

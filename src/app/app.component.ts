@@ -7,10 +7,12 @@ import { NavigationComponent } from "./components/navigation/navigation.componen
 import { HomeComponent } from './components/home/home.component';
 import { CommonModule } from '@angular/common';
 import { ReversePipe } from './custom/reverse.pipe';
+import { InlinestyleComponent } from './components/inlinestyle/inlinestyle.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatCardModule, HeaderComponent, FooterComponent, NavigationComponent, HomeComponent, CommonModule, ReversePipe],
+  imports: [RouterOutlet, MatCardModule, HeaderComponent, FooterComponent, NavigationComponent, HomeComponent,InlinestyleComponent, CommonModule, ReversePipe, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -20,6 +22,15 @@ export class AppComponent {
   salary = 100000;
   objects = {"name":"ang"}
   isdisabled = false;
+
+  ChangeTitle(){
+    this.title = "gBasics Pro"
+  }
+
+  UpdateTitle(event : any){
+    console.log("Hii");
+    this.title = event.target.value;
+  }
 }
 //Commommodule is imported for pipes
 //Matcardmodule for angular material cards
