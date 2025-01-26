@@ -1,5 +1,31 @@
 <!-- Router Outlet for Routing -->
+<!-- <a routerLink = "">Home</a><br>
+<a routerLink = "inline">Inline</a><br>
+<a routerLink = "style">Style</a><br>
+<a routerLink = "template">Template</a> -->
+
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>GBasics</span>
+  <span class="example-spacer"></span>
+  <button mat-button routerLink = "">Home</button>
+  <button mat-button routerLink = "about">About</button>
+  <button mat-button routerLink = "template">Template</button>
+  <button mat-button routerLink = "style">Style</button>
+  <button mat-button routerLink = "inline">Both</button>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>inline</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>style</mat-icon>
+  </button>
+</mat-toolbar>
+
+
 <router-outlet></router-outlet>
+
 
 <!-- Material Card Example -->
 <mat-card appearance="outlined">
@@ -70,3 +96,6 @@
 
 <!-- Footer Component -->
 <app-footer></app-footer>
+
+<!-- main.ts:5  ERROR RuntimeError: NG04002: Cannot match any routes. URL Segment: 'customer/edit/1000/l -->
+ <!-- Ull encounter the above error if u give some inappropriate routes. -->

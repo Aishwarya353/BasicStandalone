@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -9,10 +9,13 @@ import { CommonModule } from '@angular/common';
 import { ReversePipe } from './custom/reverse.pipe';
 import { InlinestyleComponent } from './components/inlinestyle/inlinestyle.component';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatCardModule, HeaderComponent, FooterComponent, NavigationComponent, HomeComponent,InlinestyleComponent, CommonModule, ReversePipe, FormsModule],
+  imports: [RouterOutlet, MatCardModule, HeaderComponent, FooterComponent, NavigationComponent, HomeComponent,InlinestyleComponent, CommonModule, ReversePipe, FormsModule, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -39,3 +42,4 @@ export class AppComponent {
 //Interpolation - consider it as string
 //Property = considers exact datatype
 //FormsModule for ngModel Directive
+//RouterLink for using in anchor tags
